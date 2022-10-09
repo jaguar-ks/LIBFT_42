@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 08:53:13 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/09 21:34:16 by faksouss         ###   ########.fr       */
+/*   Created: 2022/10/09 21:14:27 by faksouss          #+#    #+#             */
+/*   Updated: 2022/10/09 21:35:37 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memmove(void *d, const void *s, size_t l)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
+	char	*str;
 
-	if (d < s)
-	{
-		i = -1;
-		while (++i <= (int)l - 1)
-			((char *)d)[i] = ((char *)s)[i];
-	}
-	if (s < d)
-	{
-		i = l;
-		while (--i >= 0)
-			((char *)d)[i] = ((char *)s)[i];
-	}
-	return (d);
+	i = -1;
+	str = ft_strdup(s);
+	while (str[++i])
+		str[i] = (f)(i, str[i]);
+	return (str);
 }

@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 08:53:13 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/09 21:34:16 by faksouss         ###   ########.fr       */
+/*   Created: 2022/10/09 15:03:52 by faksouss          #+#    #+#             */
+/*   Updated: 2022/10/09 15:05:58 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-void	*ft_memmove(void *d, const void *s, size_t l)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int		i;
-
-	if (d < s)
-	{
-		i = -1;
-		while (++i <= (int)l - 1)
-			((char *)d)[i] = ((char *)s)[i];
-	}
-	if (s < d)
-	{
-		i = l;
-		while (--i >= 0)
-			((char *)d)[i] = ((char *)s)[i];
-	}
-	return (d);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
