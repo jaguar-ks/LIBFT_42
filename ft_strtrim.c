@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:16:06 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/07 23:24:00 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/11 01:29:22 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,27 @@ int	kayn(char *s, char c)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	t;
-	char			*r;
+	int		i;
+	int		j;
+	int		t;
+	char	*r;
 
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	t = 0;
 	while (s1[i] && kayn((char *)set, s1[i]))
 		i++;
-	while (s1[j] && kayn((char *)set, s1[j]))
+	while (s1[j] && kayn((char *)set, s1[j]) && j > 0)
 		j--;
-	r = (char *)malloc(j - i + 1);
+	r = (char *)ft_calloc((j + i) + 1, sizeof(char));
+	if (!r)
+		return (NULL);
 	while (i <= j)
 		r[t++] = s1[i++];
 	r[t] = 0;
 	return (r);
 }
+// int main()
+// {
+// 	printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
+// }

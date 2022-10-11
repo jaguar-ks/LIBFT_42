@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:45:45 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/07 23:11:02 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/10 22:08:03 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*d;
 
-	d = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	d = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (!d)
 		return (NULL);
-	d = ft_strjma3((char *)s1, d);
-	d = ft_strjma3((char *)s2, d);
+	if (s1 && s2)
+	{
+		d = ft_strjma3((char *)s1, d);
+		d = ft_strjma3((char *)s2, d);
+	}
 	return (d);
 }
+// int main()
+// {
+// 	printf("%s", ft_strjoin("", ""));
+// }

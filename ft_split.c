@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:22:35 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/09 14:21:54 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/11 02:07:18 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	h_m_str(char *s, char c)
 
 	i = -1;
 	j = 0;
+	if (s && c == '\0')
+		return (1);
 	while (s[++i])
 	{
 		while (s[i] && is_c(s[i], c))
@@ -36,8 +38,10 @@ int	h_m_str(char *s, char c)
 			while (s[i] && !is_c(s[i], c))
 				i++;
 		}
+		if (!s[i])
+			i--;
 	}
-	return (j - 1);
+	return (j);
 }
 
 int	h_m_ch(char *s, char c)
@@ -57,22 +61,44 @@ int	h_m_ch(char *s, char c)
 	return (j);
 }
 
+// char	*hz_ht(char *s, char c)
+// {
+// 	int		i;
+// 	char	*d;
+
+// 	i = 0;
+// 	d = (char *)malloc(sizeof(char) * h_m_ch(s, c) + 1);
+// 	if (!d)
+// 		return (NULL);
+// 	while (s[i] && !is_c(s[i], c))
+// 	{
+// 		d[i] = s[i];
+// 		i++;
+// 	}
+// 	d[i] = '\0';
+// 	return (d);
+// }
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		st;
 	char	**r;
+	int		j;
 
-	i = -1;
+	j = h_m_str((char *)s, c);
+	i = 0;
 	st = 0;
-	r = (char **)malloc(sizeof(char *) * h_m_str((char *)s, c) + 1);
+	r = (char **)malloc(sizeof(char *) * (j + 1));
 	if (!r)
 		return (NULL);
-	while (++i < h_m_str((char *)s, c))
+	while (i < j && s[st])
 	{
 		while (s[st] && is_c(s[st], c))
 			st++;
-		r[i] = ft_substr(s, st, h_m_ch((char *)s + st, c));
+		if (!s[st])
+			break ;
+		r[i++] = ft_substr((char *)s, st, h_m_ch((char *)s + st, c));
 		st += h_m_ch((char *)s + st, c);
 	}
 	r[i] = NULL;

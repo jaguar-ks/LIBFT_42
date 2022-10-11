@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:25:40 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/07 23:25:53 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/11 01:16:08 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*ft_itoa(int n)
 	if (nb < 0)
 		nb *= -1;
 	i = tol(nb);
-	r = (char *)malloc(sizeof(char) * i + 2);
+	r = (char *)ft_calloc(i + 2, sizeof(char));
 	if (!r)
 		return (NULL);
 	nb = n;
@@ -63,3 +63,7 @@ char	*ft_itoa(int n)
 	}
 	return (r);
 }
+// int main()
+// {
+// 	printf("%s\n", ft_itoa(1));
+// }

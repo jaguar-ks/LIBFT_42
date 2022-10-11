@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 07:24:37 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/07 08:05:10 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/10 01:56:58 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ char	*ft_strchr(const char *s, int c)
 	while (s[++i])
 		if (s[i] == (char)c)
 			return (&((char *)s)[i]);
+	if (c == 0)
+		return (&((char *)s)[i]);
 	return (NULL);
 }

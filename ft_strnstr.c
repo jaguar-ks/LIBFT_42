@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:41:31 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/07 12:43:44 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:08:48 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strnstr(const char *hs, const char *ndl, size_t l)
 	i = 0;
 	if (ndl[0] == '\0')
 		return ((char *)hs);
-	while (hs[i] && i < l - 1)
+	while (hs[i] && i < l)
 	{
 		j = 0;
-		while (hs[i + j] == ndl[j] && (i + j) < l - 1)
+		while (hs[i + j] == ndl[j] && (i + j) < l)
 		{
 			if (ndl[j + 1] == '\0')
 				return ((char *)hs + i);

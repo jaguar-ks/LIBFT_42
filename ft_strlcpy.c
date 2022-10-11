@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:47:10 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/08 01:51:35 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:14:01 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t	ft_strlcpy(char	*d, char *s, size_t ds)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] && i <= (int)ds - 1)
+	if (ds == 0)
+		return (ft_strlen(s));
+	while (s[i] && i < ds - 1)
 	{
 		d[i] = s[i];
 		i++;
