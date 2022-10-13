@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:19:58 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/12 04:37:37 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:40:25 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 }
 // int main()
 // {
-// 	char t[20] = "";
-// 	printf("%zu\n", strlcat(NULL, "dth", 10));
+// 	// char t[20] = "";
+// 	printf("%zu\n", strlcat(NULL, NULL, 10));
 // 	//printf("%zu", ft_strlcat(NULL, "iujkgrf", 0));
 // }

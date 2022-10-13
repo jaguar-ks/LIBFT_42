@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:22:35 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/12 06:56:10 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:52:44 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,26 +61,39 @@ int	h_m_ch(char *s, char c)
 	return (j);
 }
 
+void	*deallocate(char **r)
+{
+	int	i;
+
+	i = -1;
+	while (r[++i])
+		free(r[i]);
+	free(r);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		st;
 	char	**r;
-	int		j;
 
-	j = h_m_str((char *)s, c);
-	i = 0;
+	if (!s)
+		return (NULL);
+	i = -1;
 	st = 0;
-	r = (char **)malloc(sizeof(char *) * (j + 1));
+	r = (char **)malloc(sizeof(char *) * (h_m_str((char *)s, c) + 1));
 	if (!r)
 		return (NULL);
-	while (i < j && s[st])
+	while (++i < h_m_str((char *)s, c) && s[st])
 	{
 		while (s[st] && is_c(s[st], c))
 			st++;
 		if (!s[st])
 			break ;
-		r[i++] = ft_substr((char *)s, st, h_m_ch((char *)s + st, c));
+		r[i] = ft_substr((char *)s, st, h_m_ch((char *)s + st, c));
+		if (!r[i])
+			return (deallocate(r));
 		st += h_m_ch((char *)s + st, c);
 	}
 	r[i] = NULL;

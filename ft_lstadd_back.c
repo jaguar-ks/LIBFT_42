@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 22:37:02 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 04:53:01 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:53:47 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*cr;
-	
+
 	if (lst)
 	{
 		if (*lst)

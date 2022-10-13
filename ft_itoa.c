@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:25:40 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/11 01:16:08 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 22:54:19 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	tol(long int nb)
 	return (i);
 }
 
-char	*khchih(long int n, char *r, int l)
+char	*insert(long int n, char *r, int l)
 {
 	r[l] = 0;
 	while (--l >= 0)
@@ -55,11 +55,11 @@ char	*ft_itoa(int n)
 	if (nb >= 0 && nb < 10)
 		r[0] = nb + 48;
 	if (nb > 9)
-		r = khchih(nb, r, i);
+		r = insert(nb, r, i);
 	else if (nb < 0)
 	{
 		r[0] = '-';
-		r = khchih(-nb, r, i + 1);
+		r = insert(-nb, r, i + 1);
 	}
 	return (r);
 }

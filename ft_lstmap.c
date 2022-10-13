@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 03:52:08 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 04:45:55 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:53:33 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&r, new);
 	}
 	return (r);
-}
-void	*topper(void *p)
-{
-	char *c = (char *)p;
-	printf("%c\n", c[0] - 32);
-	return p;
 }

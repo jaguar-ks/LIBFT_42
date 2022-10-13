@@ -6,13 +6,13 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:45:45 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/12 06:34:29 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/13 23:39:28 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_strjma3(char *s, char *d)
+char	*ft_concat(char *s, char *d)
 {
 	int	i;
 	int	j;
@@ -29,14 +29,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*d;
 
+	if (!s1 && !s2)
+		return (NULL);
+	else if (!s1)
+		return (ft_strdup(s2));
+	else if (!s2)
+		return (ft_strdup(s1));
 	d = ft_calloc((ft_strlen(s1) + ft_strlen(s2) + 1), sizeof(char));
 	if (!d)
 		return (NULL);
-	if (s1 && s2)
-	{
-		d = ft_strjma3((char *)s1, d);
-		d = ft_strjma3((char *)s2, d);
-	}
+	d = ft_concat((char *)s1, d);
+	d = ft_concat((char *)s2, d);
 	return (d);
 }
 // int main()
