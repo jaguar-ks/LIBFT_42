@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:16:06 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/11 01:29:22 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 06:34:53 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	j = ft_strlen(s1) - 1;
 	t = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[i] && kayn((char *)set, s1[i]))
 		i++;
-	while (s1[j] && kayn((char *)set, s1[j]) && j > 0)
+	while (kayn((char *)set, s1[j]) && j >= 0)
 		j--;
 	r = (char *)ft_calloc((j + i) + 1, sizeof(char));
 	if (!r)
 		return (NULL);
-	while (i <= j)
+	while (i <= j && s1[i])
+	{
 		r[t++] = s1[i++];
-	r[t] = 0;
+	}
+	r[t] = '\0';
 	return (r);
 }
-// int main()
-// {
-// 	printf("%s\n", ft_strtrim("   xxx   xxx", " x"));
-// }

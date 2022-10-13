@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:41:33 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/10 21:23:45 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 06:02:07 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*d;
 	unsigned int	i;
 
-	d = ft_calloc(len, sizeof(char));
-	if (!d)
+	d = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!d || !s)
 		return (NULL);
 	i = 0;
 	if (start >= ft_strlen(s))

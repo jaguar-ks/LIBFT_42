@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:45:45 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/10 22:08:03 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 06:34:29 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 // int main()
 // {
-// 	printf("%s", ft_strjoin("", ""));
+// 	printf("%s", ft_strjoin("", "42"));
 // }

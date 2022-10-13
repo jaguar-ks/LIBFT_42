@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:22:35 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/11 02:07:18 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 06:56:10 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,24 +60,6 @@ int	h_m_ch(char *s, char c)
 	}
 	return (j);
 }
-
-// char	*hz_ht(char *s, char c)
-// {
-// 	int		i;
-// 	char	*d;
-
-// 	i = 0;
-// 	d = (char *)malloc(sizeof(char) * h_m_ch(s, c) + 1);
-// 	if (!d)
-// 		return (NULL);
-// 	while (s[i] && !is_c(s[i], c))
-// 	{
-// 		d[i] = s[i];
-// 		i++;
-// 	}
-// 	d[i] = '\0';
-// 	return (d);
-// }
 
 char	**ft_split(char const *s, char c)
 {

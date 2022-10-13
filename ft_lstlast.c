@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 18:22:25 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/11 02:17:54 by faksouss         ###   ########.fr       */
+/*   Created: 2022/10/12 22:18:25 by faksouss          #+#    #+#             */
+/*   Updated: 2022/10/13 01:50:39 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	i;
-	int	s;
-	int	r;
-
-	i = 0;
-	r = 0;
-	s = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
-		s *= -1;
-	if (s < 0 || str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r = (r * 10) + (str[i] - 48);
-		i++;
-	}
-	return (r * s);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
+// int main()
+// {
+// 	t_list *l1, *l2, *l3;
+// 	l1 = ft_lstnew("fahd");
+// 	l2 = ft_lstnew("amine");
+// 	l3 = ft_lstnew("ksouss");
+// 	ft_lstadd_front(&l3,l2);
+// 	ft_lstadd_front(&l2,l1);
+// 	printf("%s", (char *)ft_lstlast(l1)->content);
+// }

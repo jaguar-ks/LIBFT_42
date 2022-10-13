@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:26:18 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/10 00:35:22 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 05:11:20 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*d;
 
 	i = -1;
-	if (!s)
-		return (NULL);
-	d = (char *)malloc(sizeof(char) * ft_strlen(s));
+	d = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!d)
 		return (NULL);
 	while (s[++i])

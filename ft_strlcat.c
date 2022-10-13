@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:19:58 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/06 14:24:55 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 04:37:37 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	unsigned int	ds;
 	unsigned int	ss;
 
+	ss = ft_strlen(src);
+	if (!dest && !size)
+		return (ss);
 	i = 0;
 	ds = ft_strlen(dest);
-	ss = ft_strlen(src);
 	if (size <= ds)
 		return (size + ss);
 	while (src[i] && i < size - ds - 1)
@@ -31,3 +33,9 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[ds + i] = '\0';
 	return (ds + ss);
 }
+// int main()
+// {
+// 	char t[20] = "";
+// 	printf("%zu\n", strlcat(NULL, "dth", 10));
+// 	//printf("%zu", ft_strlcat(NULL, "iujkgrf", 0));
+// }

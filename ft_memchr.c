@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:27:40 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/10 01:44:42 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/12 06:09:52 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,3 +22,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((char *)s + i - 1);
 	return (NULL);
 }
+// int main()
+// {
+// 	char s[] = {0,1,2,3,4,5};
+// 	printf("%s\n%s", memchr(s, 2+256, 3),ft_memchr(s, 2+256, 3));
+// }
