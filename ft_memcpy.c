@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:13:23 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/12 04:22:43 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/18 03:49:54 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,15 @@
 
 void	*ft_memcpy(void *d, const void *s, size_t l)
 {
-	int	i;
+	size_t	i;
 
-	i = -1;
+	i = 0;
 	if (!d && !s)
 		return (NULL);
-	while (++i <= (int)l - 1)
-			((char *)d)[i] = ((char *)s)[i];
+	while (i < l)
+	{
+		((char *)d)[i] = ((char *)s)[i];
+		i++;
+	}
 	return (d);
 }
-// int main()
-// {
-// 	char *d = "feen azbi";
-// 	char *t = NULL;
-// 	printf("%s", ft_memcpy(NULL, NULL, 3));
-// }

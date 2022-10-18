@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 20:42:10 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 01:47:10 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:51:11 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-
-// int main()
-// {
-// 	t_list *ham = ft_lstnew("fahd");
-// 	printf("%s", (char *)ham->content);
-// }

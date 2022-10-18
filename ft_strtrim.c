@@ -6,13 +6,13 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:16:06 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 23:50:57 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/17 01:00:23 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	kayn(char *s, char c)
+static int	kayn(char *s, char c)
 {
 	int	i;
 

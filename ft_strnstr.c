@@ -6,7 +6,7 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:41:31 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/12 04:42:48 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:48:00 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,3 @@ char	*ft_strnstr(const char *hs, const char *ndl, size_t l)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	printf("%s", strnstr("nhjgked", NULL, 0));
-// }

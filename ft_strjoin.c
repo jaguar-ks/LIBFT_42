@@ -6,13 +6,13 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:45:45 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 23:39:28 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/17 01:00:08 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-char	*ft_concat(char *s, char *d)
+static char	*ft_concat(char *s, char *d)
 {
 	int	i;
 	int	j;
@@ -42,7 +42,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	d = ft_concat((char *)s2, d);
 	return (d);
 }
-// int main()
-// {
-// 	printf("%s", ft_strjoin("", "42"));
-// }

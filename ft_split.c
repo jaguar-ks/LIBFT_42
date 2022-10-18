@@ -6,20 +6,20 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 01:22:35 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 23:52:44 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:59:57 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	is_c(char s, char c)
+static int	is_c(char s, char c)
 {
 	if (s == c)
 		return (1);
 	return (0);
 }
 
-int	h_m_str(char *s, char c)
+static int	h_m_str(char *s, char c)
 {
 	int	i;
 	int	j;
@@ -44,7 +44,7 @@ int	h_m_str(char *s, char c)
 	return (j);
 }
 
-int	h_m_ch(char *s, char c)
+static int	h_m_ch(char *s, char c)
 {
 	int	i;
 	int	j;
@@ -61,7 +61,7 @@ int	h_m_ch(char *s, char c)
 	return (j);
 }
 
-void	*deallocate(char **r)
+static void	*deallocate(char **r)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: faksouss <faksouss@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:25:40 by faksouss          #+#    #+#             */
-/*   Updated: 2022/10/13 22:54:19 by faksouss         ###   ########.fr       */
+/*   Updated: 2022/10/17 00:59:07 by faksouss         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	tol(long int nb)
+static int	tol(long int nb)
 {
 	int	i;
 
@@ -63,7 +63,3 @@ char	*ft_itoa(int n)
 	}
 	return (r);
 }
-// int main()
-// {
-// 	printf("%s\n", ft_itoa(1));
-// }
